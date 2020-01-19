@@ -16,6 +16,12 @@ if __name__ == "__main__":
 
     if "<url>" in args:
         track = Track(args["<url>"])
+        print("Downloading...")
         track.download()
+
+        print(f"Title: {track.title}")
+        print(f"Artist(s): {'/'.join(track.artists)}")
+        print(f"Genre(s): {'/'.join(track.genres)}")
+
         track.write_meta_to_file()
         print("Done!")
